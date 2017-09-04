@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fleet", "Fleet.csproj", "{270DA2F8-3E34-FA02-3B66-7C3EA66DE7F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fleet.Editor", "Fleet.Editor.csproj", "{2B94EA36-706A-A04D-35A9-C10E14006ABC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{270DA2F8-3E34-FA02-3B66-7C3EA66DE7F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{270DA2F8-3E34-FA02-3B66-7C3EA66DE7F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{270DA2F8-3E34-FA02-3B66-7C3EA66DE7F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{270DA2F8-3E34-FA02-3B66-7C3EA66DE7F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B94EA36-706A-A04D-35A9-C10E14006ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B94EA36-706A-A04D-35A9-C10E14006ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B94EA36-706A-A04D-35A9-C10E14006ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B94EA36-706A-A04D-35A9-C10E14006ABC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

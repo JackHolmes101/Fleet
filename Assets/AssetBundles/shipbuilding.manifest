@@ -1,0 +1,38 @@
+ManifestFileVersion: 0
+CRC: 46874223
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b1e8b5dfb606ed4df69c97a0133757a2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4b589e3c2234c8e3947f925627ebde75
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3a6158b0dc9005342801938c29ffde5a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 14180aa793a25f94db84eb200d6b3f33, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/Placements/BadPlacement.prefab
+- Assets/Prefabs/Placements/GoodPlacement.prefab
+- Assets/Prefabs/Placements/Placement.prefab
+Dependencies: []
