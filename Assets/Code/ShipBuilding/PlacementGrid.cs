@@ -8,7 +8,7 @@ public class PlacementGrid : MonoBehaviour
     public int xSize;
     public int ySize;
     public int zSize;
-    private Placement[,,] placements; // Array of Placements that represent the entire Ship.
+    private Placement[,,] placements; // Array of Placements that represent the entire ship.
     private int currentFloorNumber = 0;
 
     public int XSize
@@ -51,9 +51,12 @@ public class PlacementGrid : MonoBehaviour
 
     private void setupPlacementGrid(int width, int height, int length)
     {
-        int minWidth = 6;
-        int minHeight = 4;
-        int minLength = 10;
+        //int minWidth = 6;
+        //int minHeight = 4;
+        //int minLength = 10;
+        int minWidth = 1;
+        int minHeight = 1;
+        int minLength = 1;
 
         if (width < minWidth)
             xSize = minWidth;

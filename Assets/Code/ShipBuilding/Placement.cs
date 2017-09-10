@@ -14,6 +14,7 @@ internal class Placement: MonoBehaviour
     public void Start()
     {
         MakeFSM();
+        fsm.PerformTransition(Transition.Placed);
     }
 
     public void FixedUpdate()
@@ -56,7 +57,9 @@ public class InactiveState : FSMState
 
     public override void DoBeforeEntering()
     {
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        Debug.Log("InactiveState");
+
+        //gameObject.GetComponent<MeshRenderer>().enabled = false;
         gameObject.GetComponent<ChangeColour>().R = 1;
         gameObject.GetComponent<ChangeColour>().G = 0;
         gameObject.GetComponent<ChangeColour>().B = 0;
@@ -77,6 +80,7 @@ public class InactiveState : FSMState
 public class ActiveState : FSMState
 { 
     GameObject gameObject;
+    float timeInState;
 
     public ActiveState(GameObject GO)
     {
@@ -86,7 +90,9 @@ public class ActiveState : FSMState
 
     public override void DoBeforeEntering()
     {
-        gameObject.GetComponent<MeshRenderer>().enabled = true;
+        Debug.Log("ActiveState");
+
+        //gameObject.GetComponent<MeshRenderer>().enabled = true;
         gameObject.GetComponent<ChangeColour>().R = 0;
         gameObject.GetComponent<ChangeColour>().G = 1;
         gameObject.GetComponent<ChangeColour>().B = 0;
@@ -94,12 +100,15 @@ public class ActiveState : FSMState
 
     public override void Reason(GameObject player, GameObject npc)
     {
+        if (timeInState >= 5)
+            gameObject.GetComponent<Placement>().SetTransition(Transition.Deactivated);
         //Debug.Log("ActiveState Reason");
     }
 
     public override void Act(GameObject player, GameObject npc)
     {
         //Debug.Log("ActiveState Reason");
+        timeInState += Time.deltaTime;
     }
 }
 
@@ -115,6 +124,8 @@ public class DisabledState : FSMState
 
     public override void DoBeforeEntering()
     {
+        Debug.Log("DisabledState");
+
         gameObject.GetComponent<ChangeColour>().R = 0;
         gameObject.GetComponent<ChangeColour>().G = 0;
         gameObject.GetComponent<ChangeColour>().B = 1;

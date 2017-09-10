@@ -78,10 +78,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Code\Common\Architecture\Controllers\Controller.cs" />
+    <Compile Include="Assets\Code\Common\Architecture\Controllers\SelectionController.cs" />
+    <Compile Include="Assets\Code\Common\Architecture\Engine.cs" />
+    <Compile Include="Assets\Code\Common\Architecture\Game.cs" />
+    <Compile Include="Assets\Code\Common\Architecture\InputManager.cs" />
+    <Compile Include="Assets\Code\Common\Architecture\Level.cs" />
     <Compile Include="Assets\Code\Common\FSMSystem.cs" />
-    <Compile Include="Assets\Code\Common\Level.cs" />
+    <Compile Include="Assets\Code\Common\GameEvent.cs" />
     <Compile Include="Assets\Code\Common\QuickStart.cs" />
     <Compile Include="Assets\Code\Common\ResourceManager.cs" />
+    <Compile Include="Assets\Code\Common\WorldObjects\Entity.cs" />
     <Compile Include="Assets\Code\ShipBuilding\Placement.cs" />
     <Compile Include="Assets\Code\ShipBuilding\PlacementGrid.cs" />
     <Compile Include="Assets\Scripts\ChangeColour.cs" />

@@ -4,11 +4,6 @@ using UnityEngine;
 
 namespace Assets.Code.Common
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-
     /**
 A Finite State Machine System based on Chapter 3.1 of Game Programming Gems 1 by Eric Dybsand
      
