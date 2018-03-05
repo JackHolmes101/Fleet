@@ -6,15 +6,14 @@ using UnityEngine;
 public class SelectionController:Controller
 {
 
-    private Level level;
+    //private Level level;
     //private Team playerTeam;
 
     public List<Entity> selection { get; private set; }
 
     public SelectionController(Level level)
     {
-        //this.level = level;
-        //selection = new List<Entity>();
+        selection = new List<Entity>();
         //this.playerTeam = level.playerTeam;
     }
 
@@ -107,4 +106,5 @@ public class SelectionController:Controller
         //    EventManager.Instance.TriggerEvent(new DragSelectBoxEvent(outer));
         //}
     }
+
 }

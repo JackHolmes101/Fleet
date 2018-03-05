@@ -23,9 +23,6 @@ internal class Placement: MonoBehaviour
         fsm.CurrentState.Act(player, gameObject);
     }
 
-    // The NPC has two states: FollowPath and ChasePlayer
-    // If it's on the first state and SawPlayer transition is fired, it changes to ChasePlayer
-    // If it's on ChasePlayerState and LostPlayer transition is fired, it returns to FollowPath
     private void MakeFSM()
     {
         InactiveState inactive = new InactiveState(gameObject);

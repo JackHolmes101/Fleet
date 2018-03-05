@@ -2,41 +2,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Code.Common.Architecture
 {
     public class Engine : MonoBehaviour
     {
-        public Level level { get; private set; }
+
+        #region Singleton pattern
+        protected static Engine singleton;
+
+        public static Engine Singleton
+        {
+            get
+            {
+                if (singleton == null) singleton = FindObjectOfType<Engine>();
+                return singleton;
+            }
+        }
+        #endregion
+
+        public static Level CurrentLevel { get; private set; }
 
         private SelectionController _selectionController;
         //private CommandController _commandController;
         //private UiController _uiController;
         //private GameOverController _gameOverController;
 
-        // Use this for initialization
-        void Start()
+        public void Start()
         {
-
+            // Load the main menu...
+           
         }
 
         public void Update()
         {
-            if (level.IsGameOver())
-            {
-                //_gameOverController.EndGame();
-                return;
-            }
+            //if (level.IsGameOver())
+            //{
+            //    //_gameOverController.EndGame();
+            //    return;
+            //}
 
             if (Input.GetButtonDown("Fire1"))
             {
                 // TODO: do a check to see if its on gui or worldspace?
-                //_selectionController.CreateBoxSelection();
+                _selectionController.CreateBoxSelection();
             }
 
             if (Input.GetButtonUp("Fire1"))
             {
-                //_selectionController.SelectEntities();
+                _selectionController.SelectEntities();
             }
 
             _selectionController.DragBoxSelection();
@@ -50,9 +65,12 @@ namespace Assets.Code.Common.Architecture
 
         public void LoadLevel()//LevelData levelData)
         {
-            level.LoadData();//levelData, Teams.One, Teams.Two);
+            //placeholder
+            CurrentLevel = new Level();
 
-            //_selectionController = new SelectionController(this.level);
+            CurrentLevel.LoadData();//levelData, Teams.One, Teams.Two);
+
+            //_selectionController = new SelectionController(this.CurrentLevel);
             //_commandController = new CommandController(this.level);
             //_uiController = new UiController();
             //_gameOverController = new GameOverController(level);

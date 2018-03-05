@@ -27,8 +27,8 @@ public class GameInputManager : MonoBehaviour
         public float value = 0f;
 
         public EventData(KeyCode keyCode) { this.keyCode = keyCode; }
-        public EventData(string axis, float value) { this.axis = axis; this.value = value; }
         public EventData(string button) { this.button = button; }
+        public EventData(string axis, float value) { this.axis = axis; this.value = value; }
     }
     #endregion
 
@@ -89,7 +89,7 @@ public class GameInputManager : MonoBehaviour
         }
         foreach (string b in observedButtons)
         {
-            if (Input.GetButtonDown(b)) SendEvent(new EventData(b));
+            if (Input.GetButtonDown(b) || Input.GetButtonUp(b)) SendEvent(new EventData(b));
         }
         foreach (KeyCode k in observedKeycodes)
         {
@@ -151,7 +151,7 @@ public class GameInputManager : MonoBehaviour
 }
 
 
-// DEMO CODE
+// DEMO CODE 1
 //using UnityEngine;
 
 //public class DemoInputObserver : MonoBehaviour
@@ -198,4 +198,67 @@ public class GameInputManager : MonoBehaviour
 //        }
 //    }
 //    #endregion
+//}
+
+// DEMO CODE 2
+
+//public class Game : MonoBehaviour
+//{
+//    private Engine engine;
+
+//    /// <summary> Initialise the engine, and call LoadLevel. </summary>
+//    private void Start()
+//    {
+//        engine = new Engine();
+//        engine.LoadLevel();
+//        //GameInputManager.ObserveKeyCode(KeyCode.Mouse0);
+//        GameInputManager.ObserveButton("Fire1");
+//        GameInputManager.ObserveButton("Fire2");
+//        //GameInputManager.ObserveKeyCode(KeyCode.Mouse0);
+//        GameInputManager.Register(OnInputEvent);
+//    }
+
+//    private void Update()
+//    {
+//        engine.Update();
+//    }
+
+
+//    protected void OnInputEvent(GameInputManager.EventData data)
+//    {
+//        if (data.used) return;
+
+//        //if (data.keyCode == KeyCode.Mouse0)
+//        //{
+//        //    Debug.Log("Mouse0 was pressed");
+//        //    data.used = true;
+//        //}
+//        string logOutput = "";
+//        if (data.button == "Fire1")
+//        {
+//            if (Input.GetButtonUp("Fire1"))
+//                logOutput += " Fire1 button up";
+//            if (Input.GetButtonDown("Fire1"))
+//                logOutput += " Fire1 button down";
+//            //data.used = true;
+//        }
+//        if (data.button == "Fire2")
+//        {
+//            if (Input.GetButtonUp("Fire2"))
+//                logOutput += " Fire2 button up";
+//            if (Input.GetButtonDown("Fire2"))
+//                logOutput += " Fire2 button down";
+//            //data.used = true;
+//        }
+//        if (logOutput == "")
+//            Debug.Log(logOutput);
+//        Debug.Log(logOutput);
+
+//        data.used = true;
+//    }
+
+//    protected void OnDisable()
+//    {
+//        GameInputManager.Unregister(OnInputEvent);
+//    }
 //}
