@@ -17,6 +17,8 @@ public class PlacePlacementBehaviour : MonoBehaviour {
         constructionBounds = boundsRenderer.bounds;
         Renderer placementRenderer = Placement.GetComponent<Renderer>();
         placementBounds = placementRenderer.bounds;
+        GameInputManager.ObserveButton("Fire1");
+        GameInputManager.Register(OnInputEvent);
     }
 
     // Update is called once per frame
@@ -39,5 +41,13 @@ public class PlacePlacementBehaviour : MonoBehaviour {
             Placement.transform.position = constructionBounds.ClosestPoint(targetPosition);
         }
 
+    }
+
+    private void OnInputEvent(GameInputManager.EventData data)
+    {
+        if (data.used)
+            return;
+        if (data.button == "Fire1")
+            Instantiate(Placement);
     }
 }
